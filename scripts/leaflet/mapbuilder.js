@@ -405,7 +405,7 @@ var legend = L.control({position: 'topleft'});
  };
  legend.addTo(map);
 
-
+L.control.scale().addTo(map);
 
 //________________________
 // var legend = L.control({position: 'topleft'});
