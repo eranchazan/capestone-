@@ -16,9 +16,10 @@ html, body, #map{
     background-color: rgba(191, 62, 255, 0.2);
 }
 
+
 .legend  {
-	padding-bottom: 5px;
-	font-weight: bold;
+	  padding-bottom: 5px;
+	  font-weight: bold;
     width: 150px;
     height: 60px;
     opacity: 0.7;
