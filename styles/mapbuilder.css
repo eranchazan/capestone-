@@ -4,3 +4,30 @@ html, body, #map{
      margin: 0;
      padding: 0;
     }
+
+.wiki_box {
+    margin-bottom: 2em;
+    width: 18px;
+    height: 18px;
+    float: right;
+    margin-right: 8px;
+    border-style: solid;
+    border-color: rgb(191, 63, 191);
+    background-color: rgba(191, 62, 255, 0.2);
+}
+
+.legend  {
+	padding-bottom: 5px;
+	font-weight: bold;
+    width: 150px;
+    height: 60px;
+    opacity: 0.7;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+}
+
+br {
+  line-height:2em;/* chrome for instance */
+}
+ 
