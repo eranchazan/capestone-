@@ -338,6 +338,21 @@ var serverIP = '';
 var openstreetUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 var openstreet = new L.tileLayer(openstreetUrl, {maxZoom: zoomax});
 
+var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+    // maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+});
+
+
+var baseLayers = {
+  "Satellite": googleSat,
+  "openstreetmap": openstreet,
+  };
+var overlays = {
+
+  };
+L.control.layers(baseLayers, overlays).addTo(map);
+
 map.addLayer(openstreet);
 map.setView([37.826,-122.24],13);
 
@@ -407,35 +422,18 @@ var legend = L.control({position: 'topleft'});
 
 L.control.scale().addTo(map);
 
-//________________________
-// var legend = L.control({position: 'topleft'});
+var legends = L.control({position: 'topleft'});
     
-//     legend.onAdd=function (map) {
+    legends.onAdd=function (map) {
+        // create the container with a particular class name
+		var other = L.DomUtil.create('div','other')
+        	other.innerHTML += "<br /><b><i><p>Other Coverage</p><i><b>"; 
+    return other;
+ };
+ legends.addTo(map);
 
-//         // create the controle container with a particular class name
-//         var container = L.DomUtil.create('div', 'legend'),
-//         	var wikiBox = L.DomUtil.create('div','wiki_box', document.body.container)
-//         container.innerHTML += "Wikipedia Coverage" +  + "<br />" +  "Other" + " " + "__"; 
 
-//    return container;
 
-// };
-// legend.addTo(map);
-//________________________________
-// var legend = L.Control.extend({
-//     options: {
-//         position: 'topleft'
-//     },
-//     onAdd: function (map) {
-//         // create the controle container with a particular class name
-//         var container = L.DomUtil.create('div', 'legend')
-//         	var wikiBox = L.DomUtil.create('div','wiki_box')
-//         		container.innerHTML += "Wikipedia Coverage" + wikiBox   + "<br />" +  "Other" + " " + "__"; 
-//  		return container;
-//    }
-// });
-
-// map.addControl(new legend());
 
 
 
