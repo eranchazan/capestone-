@@ -5,13 +5,12 @@ html, body, #map{
      padding: 0;
     }
     p {
-      color: black;
+      color: rgb(51, 51, 255);
       margin-top: -3px;
 
     }
 
 .other {
-    color: blue;
     margin-bottom: 2em;
     width: 18px;
     height: 18px;
@@ -25,6 +24,7 @@ html, body, #map{
 }
 
 .wiki_box {
+    color: rgb(191, 63, 191);
     margin-bottom: 3em;
     width: 18px;
     height: 18px;
