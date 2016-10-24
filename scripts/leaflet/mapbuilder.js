@@ -331,29 +331,40 @@ var myData = {
    
 // console.log(chinatown);  
   
+  
 var map = L.map('map');
 var zoomax = 18;
 var serverIP = '';
 
 var openstreetUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 var openstreet = new L.tileLayer(openstreetUrl, {maxZoom: zoomax});
+map.addLayer(openstreet);
 
-var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+var stamenWaterURL = 'http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png';
+var stamenLayer = new L.tileLayer(stamenWaterURL, {maxZoom: zoomax, attribution: false });
+map.addLayer(stamenLayer);
+
+var googleSat = new L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
     // maxZoom: 20,
     subdomains:['mt0','mt1','mt2','mt3']
 });
-
+map.addLayer(googleSat);
 
 var baseLayers = {
-  "Satellite": googleSat,
   "openstreetmap": openstreet,
+  "Water Color" : stamenLayer,
+  "Satellite": googleSat
   };
 var overlays = {
 
   };
 L.control.layers(baseLayers, overlays).addTo(map);
 
-map.addLayer(openstreet);
+
+
+
+
+
 map.setView([37.826,-122.24],13);
 
 
