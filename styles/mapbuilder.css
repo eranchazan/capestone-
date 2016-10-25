@@ -36,7 +36,9 @@ html, body, #map{
 }
 
 
-
+.title h2 {
+color:gold;
+}
 
   br {
     line-height:2em;

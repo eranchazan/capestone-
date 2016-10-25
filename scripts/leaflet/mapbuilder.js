@@ -419,6 +419,8 @@ var geojson = L.geoJson(myData, {
     onEachFeature: onEachFeature
 }).addTo(map);
 
+
+
 var legend = L.control({position: 'topleft'});
     
     legend.onAdd=function (map) {
@@ -446,7 +448,13 @@ var legends = L.control({position: 'topleft'});
 
 
 
+var title = L.control({position: 'topright'});
 
+title.onAdd = function (map) {
+  var div = L.DomUtil.create('div', 'title');
+  div.innerHTML +='<h2>Oakland Neighborhood Boundaries</h2>'
+return div;
+};
 
-
+title.addTo(map);
 
